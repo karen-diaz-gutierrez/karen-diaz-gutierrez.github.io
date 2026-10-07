@@ -10,44 +10,58 @@ Web de una sola página, estática, sin dependencias ni build. Se abre haciendo 
 | Qué | Estado |
 |---|---|
 | **LinkedIn** | listo — `linkedin.com/in/karen-diaz-gutierrez`, en 3 sitios |
-| **GitHub** | listo — `github.com/karen-diaz-gutierrez`, en 3 sitios |
 | **Correo** | `karendjaz5@gmail.com`, en 5 sitios. Para cambiarlo, buscarlo y reemplazarlo |
-| **CV en PDF** | **pendiente** — los botones están ocultos, ver abajo |
+| **CV en PDF** | **no se publica** — ver abajo |
+| **GitHub** | solo infraestructura — **no aparece como enlace** en la web |
 
-### Reactivar el CV
+### CV y GitHub: decisión tomada
 
-Los tres botones de "Descargar CV" están comentados porque el QR de esta web vive *dentro* del CV,
-así que de momento no aporta. Para volver a activarlos:
+La web **no enlaza ni ofrece el CV para descarga**, y **no muestra ningún enlace a GitHub**
+(ni icono en la cabecera, ni fila en contacto, ni en el hero). GitHub se usa únicamente como
+repositorio del código y destino de publicación.
 
-1. Guardar el PDF como `assets/docs/CV-Karen-Diaz-Gutierrez.pdf`
-2. En `index.html`, buscar `CV-PENDIENTE` y quitar las marcas de comentario `<!--` y `-->`
-   que rodean el bloque
-3. El botón del hero se cambió por uno de "Contactar"; si quieres el de CV ahí también,
-   hay que volver a añadirlo
+Si algún día hay que revertirlo, es trabajo manual: los bloques se eliminaron del HTML, no quedaron
+comentados. El CV tampoco debe guardarse en `assets/docs/`, porque todo lo que vive ahí queda
+accesible por URL directa aunque no esté enlazado.
 
 ---
 
 ## 2. Publicar en GitHub Pages
 
-El repositorio tiene que llamarse exactamente `karen-diaz-gutierrez.github.io` dentro de la cuenta
-`karen-diaz-gutierrez`. Ese nombre exacto es lo que hace que la URL sea
-`https://karen-diaz-gutierrez.github.io` y no una ruta larga.
+Repositorio de destino (ya configurado como `origin`, **no crear otro**):
 
-1. En GitHub (con la cuenta `karen-diaz-gutierrez`): **New repository**
-2. **Repository name**: `karen-diaz-gutierrez.github.io`
-3. **Public**, sin README ni .gitignore — tiene que quedar vacío
-4. **Create repository**
+```
+https://github.com/karen-diaz-gutierrez/portafolio.github.io
+```
 
-Y desde la terminal, en esta carpeta:
+Rama principal: `main`.
+
+Desde la terminal, en esta carpeta:
 
 ```
 git push -u origin main
 ```
 
-El remote ya está configurado. En el primer `push` se abre el navegador para iniciar sesión
-en GitHub una sola vez.
+En el primer `push` se abre el navegador para iniciar sesión en GitHub una sola vez.
 
-En repositorios con ese nombre, Pages se activa solo: en 1–2 minutos la web está en línea.
+### Activar Pages (hay que hacerlo a mano)
+
+El repositorio se llama `portafolio.github.io`, no `karen-diaz-gutierrez.github.io`, así que para
+GitHub es un repositorio de proyecto normal: **Pages no se activa solo**.
+
+1. En el repositorio: **Settings → Pages**
+2. **Source**: *Deploy from a branch*
+3. **Branch**: `main`, carpeta `/ (root)` → **Save**
+
+La URL resultante es:
+
+```
+https://karen-diaz-gutierrez.github.io/portafolio.github.io/
+```
+
+> Para que la URL fuera la corta (`https://karen-diaz-gutierrez.github.io`) el repositorio tendría
+> que llamarse exactamente `karen-diaz-gutierrez.github.io`. Se mantiene el nombre pedido,
+> `portafolio.github.io`, asumiendo la URL larga.
 
 ### Actualizar la web más adelante
 
@@ -73,7 +87,7 @@ sitio/
 │   ├── js/main.js              menú, navegación activa, aparición al hacer scroll
 │   ├── favicon.svg             icono de la pestaña
 │   ├── img/                    fotos optimizadas (.jpg + .webp, ~3,8 MB en total)
-│   └── docs/                   cartas de recomendación (y aquí va el CV)
+│   └── docs/                   cartas de recomendación censuradas (el CV no va aquí)
 ```
 
 Cada foto está en dos formatos: `.webp` (la que cargan los navegadores modernos, pesa la mitad)
@@ -93,6 +107,7 @@ y `.jpg` como respaldo. Si cambias una, cambia las dos o quita la línea `<sourc
   de documento).
 - **Fotos de Aspen Technology**: no se usan capturas de herramientas ni información de proyectos de
   cliente. La sección se apoya en un diagrama propio.
+- **CV y GitHub**: no se enlazan desde la web (ver punto 1).
 
 ---
 
@@ -110,7 +125,7 @@ nombres. Si el encuadre queda mal, ajustar `object-position` en `.hero-figure im
 
 ---
 
-## 6. QR para el CV
+## 6. QR
 
-Una vez publicada, con la URL definitiva se puede generar un QR que apunte a la web para
-imprimirlo en el CV.
+Una vez publicada, con la URL definitiva se puede generar un QR que apunte a la web para imprimirlo
+en el CV en papel. Eso no implica publicar el CV en la web.

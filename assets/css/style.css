@@ -139,10 +139,6 @@ strong{color:var(--ink);font-weight:600}
 .nav a:hover::after,.nav a.is-active::after{transform:scaleX(1)}
 .nav a.is-active{color:var(--ink)}
 
-.header-cta{display:flex;align-items:center;gap:14px;flex:none}
-.icon-link{color:var(--muted);transition:color .22s var(--ease);display:grid;place-items:center}
-.icon-link:hover{color:var(--petrol)}
-.icon-link svg{width:19px;height:19px}
 
 /* ---------- Botones ---------- */
 .btn{
@@ -418,7 +414,6 @@ strong{color:var(--ink);font-weight:600}
   .nav.is-open{transform:none;opacity:1;visibility:visible}
   .nav a{padding:14px 0;border-bottom:1px solid var(--line-soft);font-size:1rem}
   .nav a::after{display:none}
-  .header-cta .btn{display:none}
   .hero-grid{grid-template-columns:1fr;gap:clamp(32px,5vw,48px)}
   .hero-figure img{height:clamp(300px,56vw,440px)}
   .case-grid,.contact-grid,.lead-grid{grid-template-columns:1fr}

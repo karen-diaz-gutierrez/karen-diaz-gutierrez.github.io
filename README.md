@@ -9,8 +9,8 @@ Web de una sola página, estática, sin dependencias ni build. Se abre haciendo 
 
 | Qué | Estado |
 |---|---|
-| **LinkedIn** | listo — `linkedin.com/in/karen-diaz-gutierrez`, en 3 sitios |
-| **Correo** | `karendjaz5@gmail.com`, en 5 sitios. Para cambiarlo, buscarlo y reemplazarlo |
+| **LinkedIn** | listo — `linkedin.com/in/karen-diaz-gutierrez`, en 2 sitios (hero y contacto) |
+| **Correo** | `karen.diaz.gutierrez@outlook.com`, en 5 sitios. Para cambiarlo, buscarlo y reemplazarlo |
 | **CV en PDF** | **no se publica** — ver abajo |
 | **GitHub** | solo infraestructura — **no aparece como enlace** en la web |
 

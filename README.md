@@ -28,40 +28,51 @@ accesible por URL directa aunque no esté enlazado.
 
 ## 2. Publicar en GitHub Pages
 
-Repositorio de destino (ya configurado como `origin`, **no crear otro**):
+Cuenta usada: **`karen-diaz-gutierrez`** (la otra, `karen-djaz`, no se usa para nada).
+
+El repositorio `portafolio.github.io` se creó pero quedó vacío. Se renombra a
+`karen-diaz-gutierrez.github.io`: con ese nombre exacto GitHub lo trata como *sitio de usuario*,
+Pages se activa por su cuenta y la URL queda corta.
+
+### Paso 1 — renombrar el repositorio (en el navegador, una sola vez)
+
+1. Entrar en `https://github.com/karen-diaz-gutierrez/portafolio.github.io`
+2. **Settings** (pestaña de arriba a la derecha)
+3. En **Repository name**, borrar `portafolio.github.io` y escribir:
 
 ```
-https://github.com/karen-diaz-gutierrez/portafolio.github.io
+karen-diaz-gutierrez.github.io
 ```
 
-Rama principal: `main`.
+4. **Rename**
 
-Desde la terminal, en esta carpeta:
+El repositorio está vacío, así que no se pierde nada al renombrarlo.
+
+### Paso 2 — subir la web (en la terminal, dentro de esta carpeta)
 
 ```
 git push -u origin main
 ```
 
-En el primer `push` se abre el navegador para iniciar sesión en GitHub una sola vez.
+En este primer `push` se abre el navegador para iniciar sesión en GitHub una sola vez. Hay que
+entrar con la cuenta **karen-diaz-gutierrez**.
 
-### Activar Pages (hay que hacerlo a mano)
-
-El repositorio se llama `portafolio.github.io`, no `karen-diaz-gutierrez.github.io`, así que para
-GitHub es un repositorio de proyecto normal: **Pages no se activa solo**.
-
-1. En el repositorio: **Settings → Pages**
-2. **Source**: *Deploy from a branch*
-3. **Branch**: `main`, carpeta `/ (root)` → **Save**
-
-La URL resultante es:
+Opcional, para dejar la URL del remoto con el nombre nuevo (GitHub redirige igual, no es
+obligatorio):
 
 ```
-https://karen-diaz-gutierrez.github.io/portafolio.github.io/
+git remote set-url origin https://github.com/karen-diaz-gutierrez/karen-diaz-gutierrez.github.io.git
 ```
 
-> Para que la URL fuera la corta (`https://karen-diaz-gutierrez.github.io`) el repositorio tendría
-> que llamarse exactamente `karen-diaz-gutierrez.github.io`. Se mantiene el nombre pedido,
-> `portafolio.github.io`, asumiendo la URL larga.
+### Resultado
+
+```
+https://karen-diaz-gutierrez.github.io
+```
+
+Tarda entre uno y tres minutos en estar visible desde el primer `push`. Si pasados cinco minutos
+sigue dando 404, comprobar en **Settings → Pages** que *Source* esté en *Deploy from a branch*,
+rama `main`, carpeta `/ (root)`.
 
 ### Actualizar la web más adelante
 

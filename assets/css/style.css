@@ -356,15 +356,8 @@ strong{color:var(--ink);font-weight:600}
 .award-body{display:grid;gap:11px}
 
 /* ---------- Formación y certificaciones ---------- */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:start}
-.timeline{display:grid;gap:0}
-.tl{display:grid;grid-template-columns:auto 1fr;gap:22px;padding-block:20px;border-top:1px solid var(--line)}
-.tl:first-child{border-top:0;padding-top:0}
-.tl-date{font-family:var(--ff-mono);font-size:.7rem;letter-spacing:.07em;color:var(--muted);padding-top:.35em;white-space:nowrap}
-.tl h4{margin-bottom:5px}
-.tl p{font-size:.885rem;line-height:1.55;color:var(--ink-2)}
 
-.certs{display:grid;gap:0}
+.certs{display:grid;gap:0;max-width:760px}
 .cert{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;padding-block:15px;border-top:1px solid var(--line)}
 .cert:first-child{border-top:0;padding-top:0}
 .cert-name{font-size:.945rem;color:var(--ink);font-weight:500;line-height:1.45}
@@ -427,7 +420,7 @@ strong{color:var(--ink);font-weight:600}
   .header-cta .btn{display:none}
   .hero-grid{grid-template-columns:1fr;gap:clamp(32px,5vw,48px)}
   .hero-figure img{height:clamp(300px,56vw,440px)}
-  .case-grid,.edu-grid,.contact-grid,.lead-grid{grid-template-columns:1fr}
+  .case-grid,.contact-grid,.lead-grid{grid-template-columns:1fr}
   .caps{grid-template-columns:repeat(2,1fr)}
   .recos{grid-template-columns:1fr;gap:34px}
   .reco{border-top-width:1px}

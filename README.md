@@ -26,55 +26,40 @@ accesible por URL directa aunque no esté enlazado.
 
 ---
 
-## 2. Publicar en GitHub Pages
-
-Cuenta usada: **`karen-diaz-gutierrez`** (la otra, `karen-djaz`, no se usa para nada).
-
-El repositorio `portafolio.github.io` se creó pero quedó vacío. Se renombra a
-`karen-diaz-gutierrez.github.io`: con ese nombre exacto GitHub lo trata como *sitio de usuario*,
-Pages se activa por su cuenta y la URL queda corta.
-
-### Paso 1 — renombrar el repositorio (en el navegador, una sola vez)
-
-1. Entrar en `https://github.com/karen-diaz-gutierrez/portafolio.github.io`
-2. **Settings** (pestaña de arriba a la derecha)
-3. En **Repository name**, borrar `portafolio.github.io` y escribir:
-
-```
-karen-diaz-gutierrez.github.io
-```
-
-4. **Rename**
-
-El repositorio está vacío, así que no se pierde nada al renombrarlo.
-
-### Paso 2 — subir la web (en la terminal, dentro de esta carpeta)
-
-```
-git push -u origin main
-```
-
-En este primer `push` se abre el navegador para iniciar sesión en GitHub una sola vez. Hay que
-entrar con la cuenta **karen-diaz-gutierrez**.
-
-Opcional, para dejar la URL del remoto con el nombre nuevo (GitHub redirige igual, no es
-obligatorio):
-
-```
-git remote set-url origin https://github.com/karen-diaz-gutierrez/karen-diaz-gutierrez.github.io.git
-```
-
-### Resultado
+## 2. La web ya está publicada
 
 ```
 https://karen-diaz-gutierrez.github.io
 ```
 
-Tarda entre uno y tres minutos en estar visible desde el primer `push`. Si pasados cinco minutos
-sigue dando 404, comprobar en **Settings → Pages** que *Source* esté en *Deploy from a branch*,
-rama `main`, carpeta `/ (root)`.
+Repositorio: `karen-diaz-gutierrez/karen-diaz-gutierrez.github.io`, rama `main`.
 
-### Actualizar la web más adelante
+Al llamarse el repositorio exactamente igual que la cuenta, GitHub lo trata como *sitio de
+usuario*: Pages se activó por su cuenta, sin tocar **Settings → Pages**. Por eso la URL es la
+corta y no `karen-diaz-gutierrez.github.io/portafolio.github.io/`.
+
+### Ojo con la cuenta: hay dos
+
+El Git de este ordenador tiene guardada la cuenta **karen-djaz**, pero la web vive en
+**karen-diaz-gutierrez**. Un `git push` que use la credencial guardada falla así:
+
+```
+remote: Permission to karen-diaz-gutierrez/karen-diaz-gutierrez.github.io.git denied to karen-djaz.
+fatal: ... The requested URL returned error: 403
+```
+
+Ya está resuelto: el remoto `origin` lleva el usuario dentro de la URL
+(`https://karen-diaz-gutierrez@github.com/...`), así que Git pide la credencial correcta y
+guarda las dos cuentas por separado. **No quitar el `karen-diaz-gutierrez@` de la URL del
+remoto**, o vuelve el 403.
+
+Para comprobarlo:
+
+```
+git remote -v
+```
+
+### Actualizar la web
 
 Después de cambiar cualquier archivo:
 
@@ -84,6 +69,9 @@ git add .
 git commit -m "describe el cambio"
 git push
 ```
+
+Los cambios tardan entre diez segundos y un par de minutos en verse. Si no aparecen, recargar
+con Ctrl+F5 (el navegador cachea el CSS).
 
 ---
 

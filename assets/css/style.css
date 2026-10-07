@@ -5,13 +5,13 @@
 
 /* ---------- Tokens ---------- */
 :root{
-  --bg:#ffffff;
-  --bg-alt:#f4f7f8;
+  --bg:#e3e8eb;
+  --bg-alt:#d6dde1;
   --ink:#0f1a20;
   --ink-2:#36454e;
-  --muted:#6b7a83;
-  --line:#e2e8ea;
-  --line-soft:#eef2f4;
+  --muted:#55636a;
+  --line:#c0cacf;
+  --line-soft:#ccd5da;
   --deep:#0b2531;
   --petrol:#14596e;
   --petrol-lt:#2b84a0;
@@ -107,13 +107,13 @@ strong{color:var(--ink);font-weight:600}
 /* ---------- Cabecera ---------- */
 .site-header{
   position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,.86);
+  background:rgba(227,232,235,.88);
   backdrop-filter:saturate(150%) blur(14px);
   -webkit-backdrop-filter:saturate(150%) blur(14px);
   border-bottom:1px solid transparent;
   transition:border-color .3s var(--ease), background .3s var(--ease);
 }
-.site-header.is-stuck{border-bottom-color:var(--line);background:rgba(255,255,255,.94)}
+.site-header.is-stuck{border-bottom-color:var(--line);background:rgba(227,232,235,.96)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:72px}
 
 .brand{display:flex;align-items:center;gap:11px;text-decoration:none;flex:none}
@@ -161,7 +161,7 @@ strong{color:var(--ink);font-weight:600}
 
 /* ---------- Menú móvil ---------- */
 .nav-toggle{
-  display:none;width:42px;height:42px;border:1px solid var(--line);background:#fff;
+  display:none;width:42px;height:42px;border:1px solid var(--line);background:var(--bg);
   border-radius:var(--radius);cursor:pointer;place-items:center;
 }
 .nav-toggle span{display:block;width:17px;height:1.5px;background:var(--ink);position:relative;transition:background .2s}
@@ -298,10 +298,6 @@ strong{color:var(--ink);font-weight:600}
   color:var(--muted);margin-bottom:24px;
 }
 .diagram svg{width:100%;height:auto;overflow:visible}
-.note{
-  font-size:.82rem;color:var(--muted);line-height:1.55;
-  border-left:2px solid var(--line);padding-left:16px;margin-top:28px;
-}
 
 /* ---------- Proyectos ---------- */
 .projects{border-top:1px solid var(--line)}
@@ -405,7 +401,7 @@ strong{color:var(--ink);font-weight:600}
 @media (max-width:1040px){
   .nav-toggle{display:grid}
   .nav{
-    position:fixed;inset:72px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);
+    position:fixed;inset:72px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--line);
     flex-direction:column;align-items:stretch;gap:0;padding:8px var(--gutter) 24px;
     transform:translateY(-12px);opacity:0;visibility:hidden;
     transition:opacity .28s var(--ease),transform .28s var(--ease),visibility .28s;
@@ -459,6 +455,7 @@ strong{color:var(--ink);font-weight:600}
 @media print{
   .site-header,.nav-toggle,.hero-actions,.btn{display:none}
   body{color:#000}
+  body{background:#fff}
   .section--deep{background:#fff;color:#000}
   .section--deep h1,.section--deep h2,.section--deep h3{color:#000}
   .reveal{opacity:1;transform:none}

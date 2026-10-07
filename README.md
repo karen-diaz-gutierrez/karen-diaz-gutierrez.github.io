@@ -5,57 +5,60 @@ Web de una sola página, estática, sin dependencias ni build. Se abre haciendo 
 
 ---
 
-## 1. Antes de publicar: 4 cosas por cambiar
+## 1. Estado actual
 
-Están marcadas para que sean fáciles de encontrar.
+| Qué | Estado |
+|---|---|
+| **LinkedIn** | listo — `linkedin.com/in/karen-diaz-gutierrez`, en 3 sitios |
+| **GitHub** | listo — `github.com/karen-diaz-gutierrez`, en 3 sitios |
+| **Correo** | `karendjaz5@gmail.com`, en 5 sitios. Para cambiarlo, buscarlo y reemplazarlo |
+| **CV en PDF** | **pendiente** — los botones están ocultos, ver abajo |
 
-| Qué | Dónde | Cómo encontrarlo |
-|---|---|---|
-| **LinkedIn** | `index.html` — 3 sitios | buscar `CAMBIAR-USUARIO` |
-| **GitHub** | `index.html` — 3 sitios | buscar `CAMBIAR-USUARIO` |
-| **CV en PDF** | falta el archivo | guardarlo como `assets/docs/CV-Karen-Diaz-Gutierrez.pdf` |
-| **Correo** | `index.html` — 5 sitios | buscar `karendjaz5@gmail.com` (cámbialo si prefieres otro) |
+### Reactivar el CV
 
-Para comprobar que no queda ninguno sin cambiar:
+Los tres botones de "Descargar CV" están comentados porque el QR de esta web vive *dentro* del CV,
+así que de momento no aporta. Para volver a activarlos:
 
-```
-findstr /n "CAMBIAR-USUARIO" index.html
-```
+1. Guardar el PDF como `assets/docs/CV-Karen-Diaz-Gutierrez.pdf`
+2. En `index.html`, buscar `CV-PENDIENTE` y quitar las marcas de comentario `<!--` y `-->`
+   que rodean el bloque
+3. El botón del hero se cambió por uno de "Contactar"; si quieres el de CV ahí también,
+   hay que volver a añadirlo
 
 ---
 
 ## 2. Publicar en GitHub Pages
 
-### Opción A — repositorio personal (URL más corta y limpia)
+El repositorio tiene que llamarse exactamente `karen-diaz-gutierrez.github.io` dentro de la cuenta
+`karen-diaz-gutierrez`. Ese nombre exacto es lo que hace que la URL sea
+`https://karen-diaz-gutierrez.github.io` y no una ruta larga.
 
-La URL queda `https://TU-USUARIO.github.io`.
+1. En GitHub (con la cuenta `karen-diaz-gutierrez`): **New repository**
+2. **Repository name**: `karen-diaz-gutierrez.github.io`
+3. **Public**, sin README ni .gitignore — tiene que quedar vacío
+4. **Create repository**
 
-1. En GitHub: **New repository**, con el nombre exacto `TU-USUARIO.github.io` (tu usuario literal),
-   público, sin README.
-2. Sube **el contenido de esta carpeta** (no la carpeta en sí): `index.html` tiene que quedar en la
-   raíz del repositorio. Se puede arrastrar todo a la página de subida de GitHub.
-3. **Settings → Pages**: en *Source* elige `Deploy from a branch`, rama `main`, carpeta `/ (root)`.
-4. En 1–2 minutos está en línea.
-
-### Opción B — repositorio con nombre propio
-
-La URL queda `https://TU-USUARIO.github.io/portafolio`.
-
-Igual que la opción A, pero el repositorio puede llamarse como quieras (por ejemplo `portafolio`).
-
-### Desde la terminal
+Y desde la terminal, en esta carpeta:
 
 ```
-cd "C:\Users\karen\Desktop\Pagina Web\sitio"
-git init
-git add .
-git commit -m "Portafolio profesional"
-git branch -M main
-git remote add origin https://github.com/TU-USUARIO/TU-REPO.git
 git push -u origin main
 ```
 
-Después, **Settings → Pages** como en el paso 3.
+El remote ya está configurado. En el primer `push` se abre el navegador para iniciar sesión
+en GitHub una sola vez.
+
+En repositorios con ese nombre, Pages se activa solo: en 1–2 minutos la web está en línea.
+
+### Actualizar la web más adelante
+
+Después de cambiar cualquier archivo:
+
+```
+cd "C:\Users\karen\Desktop\Pagina Web\sitio"
+git add .
+git commit -m "describe el cambio"
+git push
+```
 
 ---
 

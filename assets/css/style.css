@@ -322,7 +322,9 @@ strong{color:var(--ink);font-weight:600}
 .section--alt .tag{background:var(--bg-alt)}
 
 /* ---------- Capacidades ---------- */
-.caps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.caps{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.caps > .cap{grid-column:span 2}
+.caps > .cap:nth-child(n+4){grid-column:span 3}
 .cap{background:var(--bg);padding:clamp(24px,2.8vw,34px);display:grid;gap:14px;align-content:start}
 .cap h3{font-size:1rem;letter-spacing:-.01em}
 .cap .k{font-family:var(--ff-mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:var(--petrol)}
@@ -396,6 +398,8 @@ strong{color:var(--ink);font-weight:600}
   .hero-figure img{height:clamp(300px,56vw,440px)}
   .case-grid,.lead-grid{grid-template-columns:1fr}
   .caps{grid-template-columns:repeat(2,1fr)}
+  .caps > .cap,.caps > .cap:nth-child(n+4){grid-column:span 1}
+  .caps > .cap:last-child:nth-child(odd){grid-column:span 2}
   .recos{grid-template-columns:1fr;gap:34px}
   .reco{border-top-width:1px}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -417,6 +421,7 @@ strong{color:var(--ink);font-weight:600}
   .project{grid-template-columns:1fr;gap:14px}
   .project-num{padding-top:0}
   .caps{grid-template-columns:1fr}
+  .caps > .cap,.caps > .cap:nth-child(n+4),.caps > .cap:last-child:nth-child(odd){grid-column:auto}
   .stats-grid{grid-template-columns:1fr}
   .stat{border-left:0;padding-inline:0;border-top:1px solid var(--line)}
   .stat:first-child{border-top:0}

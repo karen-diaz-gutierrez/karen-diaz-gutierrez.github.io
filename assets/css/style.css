@@ -280,12 +280,11 @@ strong{color:var(--ink);font-weight:600}
   display:block;font-family:var(--ff-mono);font-size:.63rem;letter-spacing:.13em;
   text-transform:uppercase;color:var(--petrol-lt);font-weight:500;margin-bottom:4px;
 }
-.s-a{grid-column:span 5}  .s-a img{aspect-ratio:4/3.1}
-.s-b{grid-column:span 4}  .s-b img{aspect-ratio:4/3.1}
-.s-c{grid-column:span 3}  .s-c img{aspect-ratio:3/4}
-.s-d{grid-column:span 4}  .s-d img{aspect-ratio:4/3}
-.s-e{grid-column:span 5}  .s-e img{aspect-ratio:4/2.7}
-.s-f{grid-column:span 3}  .s-f img{aspect-ratio:3/4}
+/* Filas de igual altura: 4+4+4 · 6+6 · 3+6+3 · 6+6 */
+.s-a,.s-b,.s-d{grid-column:span 4}  .s-a img,.s-b img,.s-d img{aspect-ratio:4/3}
+.s-g,.s-h{grid-column:span 6}       .s-g img,.s-h img{aspect-ratio:3/2}
+.s-c,.s-f{grid-column:span 3}       .s-c img,.s-f img{aspect-ratio:3/4}
+.s-i,.s-j,.s-e{grid-column:span 6}  .s-i img,.s-j img,.s-e img{aspect-ratio:3/2}
 
 /* ---------- Aspen / diagrama ---------- */
 .diagram{
@@ -411,8 +410,14 @@ strong{color:var(--ink);font-weight:600}
 
 @media (max-width:860px){
   .story{grid-template-columns:repeat(6,1fr)}
-  .s-a,.s-e,.s-b,.s-d{grid-column:span 6}
-  .s-c,.s-f{grid-column:span 3}
+  .s-a,.s-i,.s-j,.s-e{grid-column:span 6}
+  .s-b,.s-d,.s-g,.s-h,.s-c,.s-f{grid-column:span 3}
+  .s-a img{aspect-ratio:16/9}
+  .s-b img,.s-d img{aspect-ratio:1/1}
+  .s-g img,.s-h img{aspect-ratio:4/3}
+  /* campo y operación juntos, y la formación debajo a ancho completo */
+  .s-a{order:1}.s-b{order:2}.s-d{order:3}.s-g{order:4}.s-h{order:5}
+  .s-c{order:6}.s-f{order:7}.s-i{order:8}.s-j{order:9}.s-e{order:10}
 }
 
 @media (max-width:620px){
@@ -426,7 +431,9 @@ strong{color:var(--ink);font-weight:600}
   .stat{border-left:0;padding-inline:0;border-top:1px solid var(--line)}
   .stat:first-child{border-top:0}
   .story{grid-template-columns:1fr}
-  .s-a,.s-b,.s-c,.s-d,.s-e,.s-f{grid-column:span 1}
+  .story figure{order:0!important}
+  .s-a,.s-b,.s-c,.s-d,.s-e,.s-f,.s-g,.s-h,.s-i,.s-j{grid-column:span 1}
+  .s-a img,.s-b img,.s-d img,.s-g img,.s-h img{aspect-ratio:4/3}
   .s-c img,.s-f img{aspect-ratio:4/3.4}
   .lead-media{grid-template-columns:1fr}
   .lm-tall{grid-row:auto}
